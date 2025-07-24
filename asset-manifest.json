@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Pizza_House/static/css/main.d7611052.css",
+    "main.js": "/Pizza_House/static/js/main.5da4c3ef.js",
+    "static/media/header.jpg": "/Pizza_House/static/media/header.a61183313c28f385427a.jpg",
+    "static/media/chefPizza.jpg": "/Pizza_House/static/media/chefPizza.04df2cd025ed070c3c70.jpg",
+    "static/media/pizzaLogo.jpg": "/Pizza_House/static/media/pizzaLogo.63259fe03c74625f6c5b.jpg",
+    "index.html": "/Pizza_House/index.html",
+    "main.d7611052.css.map": "/Pizza_House/static/css/main.d7611052.css.map",
+    "main.5da4c3ef.js.map": "/Pizza_House/static/js/main.5da4c3ef.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d7611052.css",
+    "static/js/main.5da4c3ef.js"
+  ]
+}
