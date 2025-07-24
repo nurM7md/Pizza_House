@@ -1,6 +1,5 @@
 import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import ContactUs from "./Pages/ContactUs";
@@ -12,7 +11,7 @@ import Payment from "./Pages/Payment";
 import ThankPage from "./Pages/ThankPage";
 
 function App() {
-  const routes = createBrowserRouter([
+  const routes = createHashRouter([
     {
       path: "/",
       element: <LayOut />,
@@ -41,11 +40,10 @@ function App() {
           path: "/payment",
           element: <Payment />,
         },
-         {
+        {
           path: "/thanks",
-          element: <ThankPage />
+          element: <ThankPage />,
         },
-        
       ],
     },
   ]);

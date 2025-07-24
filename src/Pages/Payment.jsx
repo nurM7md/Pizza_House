@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -82,8 +81,8 @@ const CheckOut = () => {
     }
     toast.success(" Payment Successed", {
       style: {
-        background: "#ca8a04", 
-        color: "#d1d5db", 
+        background: "#ca8a04",
+        color: "#d1d5db",
         fontWeight: "bold",
       },
       icon: "✅",
@@ -100,101 +99,102 @@ const CheckOut = () => {
 
   return (
     <div className="container flex flex-col-reverse items-center gap-10 pt-12 lg:flex-row">
-  {/* ✅ Order Summary Section */}
-  <div className="w-full max-w-2xl p-6 bg-white shadow rounded-xl">
-    {orderConfirmed ? (
-      <div className="py-16 text-center">
-        <h2 className="text-2xl font-bold text-green-600">
-          ✅ Order Sent Successfully!
-        </h2>
-        <p className="mt-2 text-xl text-gray-500">Thank you for your order</p>
-      </div>
-    ) : (
-      <>
-        <h1 className="pb-3 text-xl font-bold text-center text-gray-500">
-          Summary Of Your Order
-        </h1>
-        <ul className="space-y-4 overflow-y-auto max-h-40">
-          {cartItems.map((item) => (
-            <li
-              key={item.id}
-              className="flex items-center justify-between pb-2 border-b"
-            >
-              <div className="flex items-center gap-4">
-                <img src={item.img} alt={item.name} className="w-14" />
-                <div>
-                  <p className="font-semibold">{item.name}</p>
-                  <div className="flex items-center gap-2 text-sm text-gray-500">
-                    Quantity: {item.quantity}
+      <div className="w-full max-w-2xl p-6 bg-white shadow rounded-xl">
+        {orderConfirmed ? (
+          <div className="py-16 text-center">
+            <h2 className="text-2xl font-bold text-green-600">
+              ✅ Order Sent Successfully!
+            </h2>
+            <p className="mt-2 text-xl text-gray-500">
+              Thank you for your order
+            </p>
+          </div>
+        ) : (
+          <>
+            <h1 className="pb-3 text-xl font-bold text-center text-gray-500">
+              Summary Of Your Order
+            </h1>
+            <ul className="space-y-4 overflow-y-auto max-h-40">
+              {cartItems.map((item) => (
+                <li
+                  key={item.id}
+                  className="flex items-center justify-between pb-2 border-b"
+                >
+                  <div className="flex items-center gap-4">
+                    <img src={item.img} alt={item.name} className="w-14" />
+                    <div>
+                      <p className="font-semibold">{item.name}</p>
+                      <div className="flex items-center gap-2 text-sm text-gray-500">
+                        Quantity: {item.quantity}
+                        <button
+                          onClick={() =>
+                            dispatch({
+                              type: "INCREASE_QUANTITY",
+                              payload: item.id,
+                            })
+                          }
+                          className="px-2 font-bold text-yellow-600 border border-yellow-600 rounded-full"
+                        >
+                          +
+                        </button>
+                        <button
+                          onClick={() =>
+                            dispatch({
+                              type: "DECREASE_QUANTITY",
+                              payload: item.id,
+                            })
+                          }
+                          className="px-2 font-bold text-yellow-600 border border-yellow-600 rounded-full"
+                        >
+                          -
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <p className="font-bold text-yellow-600">
+                      {item.price * item.quantity} $
+                    </p>
                     <button
+                      className="text-2xl text-red-500"
                       onClick={() =>
-                        dispatch({
-                          type: "INCREASE_QUANTITY",
-                          payload: item.id,
-                        })
+                        dispatch({ type: "REMOVE_FROM_CART", payload: item.id })
                       }
-                      className="px-2 font-bold text-yellow-600 border border-yellow-600 rounded-full"
                     >
-                      +
-                    </button>
-                    <button
-                      onClick={() =>
-                        dispatch({
-                          type: "DECREASE_QUANTITY",
-                          payload: item.id,
-                        })
-                      }
-                      className="px-2 font-bold text-yellow-600 border border-yellow-600 rounded-full"
-                    >
-                      -
+                      <MdDeleteForever />
                     </button>
                   </div>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <p className="font-bold text-yellow-600">
-                  {item.price * item.quantity} $
-                </p>
-                <button
-                  className="text-2xl text-red-500"
-                  onClick={() =>
-                    dispatch({ type: "REMOVE_FROM_CART", payload: item.id })
-                  }
-                >
-                  <MdDeleteForever />
-                </button>
-              </div>
-            </li>
-          ))}
-        </ul>
+                </li>
+              ))}
+            </ul>
 
-        <div className="flex items-center justify-between mt-6">
-          <h2 className="text-xl font-bold text-yellow-600">Total: {total} $</h2>
-          <button
-            onClick={handlePayment}
-            className="px-4 py-2 font-bold text-white bg-yellow-600 rounded-full hover:bg-yellow-700"
-          >
-            Pay Now
-          </button>
-        </div>
-      </>
-    )}
-  </div>
+            <div className="flex items-center justify-between mt-6">
+              <h2 className="text-xl font-bold text-yellow-600">
+                Total: {total} $
+              </h2>
+              <button
+                onClick={handlePayment}
+                className="px-4 py-2 font-bold text-white bg-yellow-600 rounded-full hover:bg-yellow-700"
+              >
+                Pay Now
+              </button>
+            </div>
+          </>
+        )}
+      </div>
 
-  {/* ✅ Payment Form Section */}
-  <PaymentForm
-    onSubmit={handlePayment}
-    cardNumber={cardNumber}
-    setCardNumber={setCardNumber}
-    cardHolder={cardHolder}
-    setCardHolder={setCardHolder}
-    expiry={expiry}
-    setExpiry={setExpiry}
-    cvv={cvv}
-    setCvv={setCvv}
-  />
-</div>
-
+      <PaymentForm
+        onSubmit={handlePayment}
+        cardNumber={cardNumber}
+        setCardNumber={setCardNumber}
+        cardHolder={cardHolder}
+        setCardHolder={setCardHolder}
+        expiry={expiry}
+        setExpiry={setExpiry}
+        cvv={cvv}
+        setCvv={setCvv}
+      />
+    </div>
   );
 };
 

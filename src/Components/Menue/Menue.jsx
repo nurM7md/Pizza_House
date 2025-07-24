@@ -51,7 +51,6 @@ const Menue = () => {
   return (
     <div className="container px-4 mx-auto text-center">
       <div>
-        {/* Sidebar for medium and larger screens */}
         <div
           className={`
             fixed top-1/2 -translate-y-1/2 left-2 z-50 flex-col gap-4 pb-20
@@ -76,7 +75,6 @@ const Menue = () => {
           ))}
         </div>
 
-        {/* Top horizontal buttons for small screens */}
         <div className="flex flex-wrap justify-center gap-2 py-4 md:hidden">
           {categories.map((cat, index) => (
             <button
@@ -96,7 +94,6 @@ const Menue = () => {
           ))}
         </div>
 
-        {/* Products Grid */}
         <div className="grid grid-cols-1 gap-6 py-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 md:ml-32">
           {products.map((item, index) => (
             <div

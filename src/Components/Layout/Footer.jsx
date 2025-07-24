@@ -1,10 +1,9 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
     <div className="flex flex-col justify-between gap-6 px-4 py-6 bg-yellow-600 shadow md:flex-row">
-      {/* Pages */}
+     
       <div className="flex-1">
         <h2 className="text-2xl font-bold text-center text-yellow-950">Pages</h2>
         <div className="py-2 text-center">
@@ -15,7 +14,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Contact Info */}
+      
       <div className="flex-1">
         <h2 className="text-2xl font-bold text-center text-yellow-950">Contact Info</h2>
         <div className="py-2 text-center">
@@ -25,7 +24,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Opening Hours */}
+      
       <div className="flex-1">
         <h1 className="text-2xl font-bold text-center text-yellow-950">Opening Hours</h1>
         <div className="py-2 text-center">
@@ -34,7 +33,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Feedback */}
+      
       <div className="flex flex-col items-center flex-1">
         <textarea
           placeholder="Send us your feedback"

@@ -70,7 +70,6 @@ const CheckOut = () => {
 
   return (
     <div className="container grid grid-cols-1 gap-8 px-4 py-12 lg:grid-cols-2">
-  {/* 🧾 Order Summary Section */}
   <div className="w-full p-4 bg-white shadow rounded-xl sm:p-6">
     {orderConfirmed ? (
       <div className="py-16 text-center">
@@ -139,7 +138,6 @@ const CheckOut = () => {
     )}
   </div>
 
-  {/* 📝 Checkout Form */}
   <form onSubmit={handleSubmit} className="w-full p-4 space-y-4 bg-yellow-600 shadow-lg rounded-xl sm:p-6">
     <h1 className="text-2xl font-bold text-center text-white">CheckOut</h1>
 
@@ -159,7 +157,6 @@ const CheckOut = () => {
     />
 
     <div className="flex flex-col gap-4 sm:flex-row sm:justify-between">
-      {/* Delivery Method */}
       <div>
         <h2 className="mb-2 font-semibold text-white">Delivery Method</h2>
         <label className="block text-sm text-white">
@@ -182,7 +179,6 @@ const CheckOut = () => {
         </label>
       </div>
 
-      {/* Payment Method */}
       <div>
         <h2 className="mb-2 font-semibold text-white">Payment Method</h2>
         <label className="block text-sm text-white">

@@ -1,4 +1,3 @@
-import React from "react";
 import headerImg from "../../assets/Images/header.jpg";
 import { Link } from "react-router-dom";
 
@@ -11,7 +10,7 @@ const Header = () => {
         className="w-full h-full max-h-[600px] object-cover rounded-2xl"
       />
 
-      {/* Content Over Image */}
+      
       <div className="absolute w-full px-4 -translate-y-1/2 top-1/2 right-4 sm:right-10 sm:px-10 text-end sm:w-auto">
         <h2 className="text-3xl font-bold text-gray-500 sm:text-5xl md:text-6xl lg:text-7xl">
           Welcome at

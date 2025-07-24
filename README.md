@@ -1,3 +1,38 @@
+# Pizza_House -- React Web App
+
+A modern pizza ordering website built with React & TailwindCSS
+
+## Features
+
+- Brouse food by category
+- Add items to cart and control quantity
+- Choose between delivery or pickup
+- Select payment method (cash / online)
+- Fullly responsive
+- Hosted with Github Pages
+
+## Tech Stack
+
+- React
+- React Router
+- Tailwind CSS
+- React Hot Toast
+- Framer Motion
+
+## How to Run Locally
+
+-- Clone the repo:
+git clone https://github.com/nurM7md/Pizza_House.git
+
+-- install dependencies
+-npm install
+
+--Start development server:
+-npm start
+
+--Live Demo:
+https://nurm7md.github.io/Pizza_House/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
