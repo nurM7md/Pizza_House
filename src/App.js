@@ -1,24 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import ContactUs from "./Pages/ContactUs";
+import MenuePage from "./Pages/MenuePage";
+import CheckOut from "./Pages/CheckOut";
+import LayOut from "./Components/Layout/LayOut";
+import { Toaster } from "react-hot-toast";
+import Payment from "./Pages/Payment";
+import ThankPage from "./Pages/ThankPage";
 
 function App() {
+  const routes = createBrowserRouter([
+    {
+      path: "/",
+      element: <LayOut />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: "/menue",
+          element: <MenuePage />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/contactus",
+          element: <ContactUs />,
+        },
+        {
+          path: "/checkout",
+          element: <CheckOut />,
+        },
+        {
+          path: "/payment",
+          element: <Payment />,
+        },
+         {
+          path: "/thanks",
+          element: <ThankPage />
+        },
+        
+      ],
+    },
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Toaster position="top-center" />
+      <RouterProvider router={routes} />
+    </>
   );
 }
 
